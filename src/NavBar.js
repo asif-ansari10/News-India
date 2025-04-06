@@ -1,58 +1,80 @@
-import React, { Component } from 'react'
-import {
-  BrowserRouter as Router,
-  Link
-} from "react-router-dom";
-import About from './About';
-import help from './help'
-import News from './News';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export class NavBar extends Component {
   render() {
     return (
-      <Router>
-      <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
         <div className="container-fluid">
-            <Link className="navbar-brand" to="/">NewsIndia</Link>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <Link className="navbar-brand fw-bold fs-4" to="/">📰 NewsIndia</Link>
+
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+
+          <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                <Link className="nav-item nav-link" to="/">Home</Link>
-                </li>
-                <li className="nav-item">
-                <Link className="nav-item nav-link" aria-current="page" to="/About">About</Link>
-                </li>
-                <li className="nav-item">
-                <Link className="nav-item nav-link" to="/help">Help</Link>
-                </li>
-      
-              <li className="nav-item dropdown">
-              <Link className="nav-item nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                News
-              </Link>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link className="dropdown-item" to="/">Todays Top News</Link>
-                <Link className="dropdown-item" to="/sports">Sports News</Link>
-                <Link className="dropdown-item" to="/bussness">Bussness News</Link>
-                <Link className="dropdown-item" to="/entertainment">Entertainment News</Link>
-                <Link className="dropdown-item" to="/health">Health News</Link>
-                <Link className="dropdown-item" to="/science">Science News</Link>
-                <Link className="dropdown-item" to="/technology">Technology News</Link>
-              </div>
+
+              <li className="nav-item">
+                <Link className="nav-link" to="/">Home</Link>
               </li>
-               
+
+              <li className="nav-item">
+                <Link className="nav-link" to="/about">About</Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link" to="/help">Help</Link>
+              </li>
+
+              {/* drop downlist */}
+
+              <li className="nav-item dropdown">
+                <Link
+                  className="nav-link dropdown-toggle"
+                  to="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  News Categories
+                </Link>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><Link className="dropdown-item" to="/sports">🏏 Sports</Link></li>
+                  <li><Link className="dropdown-item" to="/">🔥 Top News</Link></li>
+                  <li><Link className="dropdown-item" to="/business">💼 Business</Link></li>
+                  <li><Link className="dropdown-item" to="/entertainment">🎬 Entertainment</Link></li>
+                  <li><Link className="dropdown-item" to="/health">🩺 Health</Link></li>
+                  <li><Link className="dropdown-item" to="/science">🔬 Science</Link></li>
+                  <li><Link className="dropdown-item" to="/technology">💻 Technology</Link></li>
+                </ul>
+              </li>
+              
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="/" id="countryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Country
+                </a>
+                <ul className="dropdown-menu" aria-labelledby="countryDropdown">
+                  <li><Link className="dropdown-item" to="/country/in">🇮🇳 India</Link></li>
+                  <li><Link className="dropdown-item" to="/country/us">🇺🇸 USA</Link></li>
+                </ul>
+              </li>
+              
             </ul>
-            </div>
+          </div>
         </div>
-        </nav>
-      </div>
-      </Router>
-    )
+      </nav>
+    );
   }
 }
 
-export default NavBar
+export default NavBar;

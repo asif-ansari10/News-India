@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar-brand {
+  letter-spacing: 1px;
+}
+
+.dropdown-menu {
+  min-width: 200px;
+  font-size: 0.95rem;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+h1, h4 {
+  color: #343a40;
+}
