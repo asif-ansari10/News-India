@@ -58,17 +58,7 @@ export class NavBar extends Component {
                   <li><Link className="dropdown-item" to="/technology">💻 Technology</Link></li>
                 </ul>
               </li>
-              
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="/" id="countryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Country
-                </a>
-                <ul className="dropdown-menu" aria-labelledby="countryDropdown">
-                  <li><Link className="dropdown-item" to="/country/in">🇮🇳 India</Link></li>
-                  <li><Link className="dropdown-item" to="/country/us">🇺🇸 USA</Link></li>
-                </ul>
-              </li>
-              
+
             </ul>
           </div>
         </div>
